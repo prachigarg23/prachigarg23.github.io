@@ -1,10 +1,10 @@
 # Site settings
-title:       Viraj Prabhu
-email:       virajp@gatech.edu
-author:      Viraj Prabhu
-description: "Viraj Prabhu's resume website."
+title:       Prachi Garg
+email:       prachigarg2398@gmail.com
+author:      Prachi Garg
+description: "Prachi Garg's personal academic website"
 baseurl:     ""
-url:         "http://virajprabhu.github.io"
+url:         "http://prachigarg23.github.io"
 date_format: "%b %-d, %Y"
 
 # Google services
@@ -42,7 +42,7 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username: virajprabhu
+github_username: prachigarg23
 bitbucket_username:
 stackoverflow_id:
 twitter_username: virprabh

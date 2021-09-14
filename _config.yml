@@ -11,7 +11,7 @@ date_format: "%b %-d, %Y"
 google_verification:
 # Use either direct GA implementation or set up GTM account
 # - using both will skew your data (leave blank to not use at all)
-google_analytics: "UA-72205921-1"
+google_analytics:
 google_tag_manager:
 # Bing services
 bing_verification:
@@ -29,7 +29,7 @@ enable_anchorjs: false
 # Facebook Page integration
 # (for instant articles and other stuff)
 fb_page: false
-fb_page_id: 
+fb_page_id:
 
 # Disqus post comments
 # (leave blank to disable Disqus)
@@ -45,11 +45,11 @@ facebook_comments_number: 10
 github_username: prachigarg23
 bitbucket_username:
 stackoverflow_id:
-twitter_username: virprabh
+twitter_username: PrachiG68526104
 skype_username:
 steam_nickname:
-google_plus_id:
-linkedin_username: viraj-prabhu-0a2a9435
+google_plus_id: false
+linkedin_username: prachi-garg-192276135
 angellist_username:
 medium_id:
 bitcoin_url:

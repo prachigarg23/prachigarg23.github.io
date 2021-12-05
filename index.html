@@ -182,14 +182,15 @@ Previously, I've had the pleasure of conducting research at:
   </td>
   <td valign="top" width="70%">
     <h5>
-    Visual Wildlife Monitoring: Domain Adaptation for Animal Detection in the Wild
+    Visual Wildlife Monitoring: Domain Generalization for Animal Detection in the Wild
     </h5>
     <p class="authors">
     <b>Prachi Garg</b>, Gullal Cheema, Saket Anand
     </p>
     <p>
-    While visual analytics plays an essential role in wildlife monitoring, camera trap images from unconstrained wild environments pose several challenges to species detection and classification. The Caltech Camera Traps(2018) dataset reflects that factors like illumination, motion blur, occlusion, camouflage and perspective can severely affect the performance of species recognition systems. Most existing models show poor generalisation on the test set due to drastic domain shifts, transfer learning is difficult and they only rely on rote pattern-matching rather than learning visual concepts from the data. We conducted experiments with modified versions of state-of-the-art object detection frameworks, incorporating concepts such as receptive field blocks from RBFNet, feature pyramid pooling from FPN, and DA-FRCNN aimed at training a model that learns a richer feature representation so as to bridge the gap between cis and trans performance for animal detection in the <a href="https://beerys.github.io/CaltechCameraTraps/">Catech Camera Traps dataset (CCT20)</a>.
+    I worked towards benchmarking species detection in camera trap images from unconstrained wild environments to generalise to new environments using state-of-the-art Faster-RCNN variants. The <a href="https://beerys.github.io/CaltechCameraTraps/">Catech Camera Traps dataset (CCT20)</a> is an unconstrained wild environment camera traps dataset designed to study domain generalization for animal species. It contains test data collected from both, locations that are same as train data (cis) as well as locations different from train data (trans). Factors like illumination, motion blur, occlusion, camouflage and perspective can severely affect the performance of species recognition systems. We bridged the generalization gap between cis-locations (test domain same as train) and trans-locations (unseen test domain) performance from 26.8\% to 22.9\% by using state-of-the-art Faster-RCNN variants. 
     </p>
+    <!-- While visual analytics plays an essential role in wildlife monitoring, camera trap images from unconstrained wild environments pose several challenges for species detection and classification.  Most existing models show poor generalisation on the test set domains  due to drastic domain shifts, transfer learning is difficult. We conducted experiments with modified versions of state-of-the-art object detection frameworks, incorporating concepts such as receptive field blocks from RBFNet, feature pyramid pooling from FPN, and DA-FRCNN aimed at training a model that learns a richer feature representation so as to bridge the gap between cis and trans performance for animal detection in the <a href="https://beerys.github.io/CaltechCameraTraps/">Catech Camera Traps dataset (CCT20)</a>. -->
     <p><small>More details about my research journey can be found <a href="reports/Research_Journey.pdf">here</a>.</small></p>
   </td>
   </tr>

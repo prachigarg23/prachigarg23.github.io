@@ -42,6 +42,7 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
+google_scholar: g5Aj5_IAAAAJ&hl=en
 github_username: prachigarg23
 bitbucket_username:
 stackoverflow_id:
@@ -55,6 +56,8 @@ medium_id:
 bitcoin_url:
 paypal_url:
 flattr_button:
+
+# user=g5Aj5_IAAAAJ&hl=en
 
 # Post sharing icons
 show_sharing_icons: false

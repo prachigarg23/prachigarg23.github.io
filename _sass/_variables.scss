@@ -25,7 +25,7 @@ $h1-responsive-max: 3.84rem !default;
 $abbr-border-bottom: 1px black dotted;
 
 // Page width
-$measure-width: 45em !default;
+$measure-width: 55em !default;
 
 // Viewport widths
 $viewport-small: 32em;
@@ -83,8 +83,8 @@ $form-field-padding-x: .5rem !default;
 
 // Borders
 $border-color: $light-gray !default;
-$border-width: 1px !default;
-$border-radius: 3px !default;
+$border-width: 0px !default;
+$border-radius: 1px !default;
 
 // Forms
 $form-field-font-size: 1rem;

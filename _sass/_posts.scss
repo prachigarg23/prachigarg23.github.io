@@ -3,6 +3,7 @@
   margin: 2em 0;
 }
 
+// this is for outer stuff
 .posts .post {
   margin: 2em 0;
 }
@@ -16,7 +17,8 @@
 .posts .post:last-child {
   border-bottom: 20px;
   margin: 2em 0;
-  text-align: justify;
+  font-family: "Avenir Next" !important;
+  text-align-last: justify;
 }
 
 .post-link .post-title {

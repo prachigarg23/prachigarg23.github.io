@@ -1,18 +1,18 @@
 
 .posts {
   margin: 2em 0;
-  text-align: justify;
 }
 
 .posts .post {
   margin: 2em 0;
   border-bottom: thin solid #f3f3f3;
-  text-align: justify;
+  text-align-last: justify;
 }
 
 .posts .post-content {
   margin: 2em 0;
-  text-align: justify;
+  font-family: "Avenir Next" !important;
+  text-align-last: justify;
 }
 
 .posts .post:last-child {

@@ -10,6 +10,11 @@
   text-align: justify;
 }
 
+.posts .post-content {
+  margin: 2em 0;
+  text-align: justify;
+}
+
 .posts .post:last-child {
   border-bottom: 20px;
   margin: 2em 0;
@@ -31,7 +36,7 @@
 
 .post-footer .avatar {
   margin: 2em 0;
-  width: 100px;
+  width: auto;
 }
 
 .meta,

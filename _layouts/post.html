@@ -2,10 +2,10 @@
 layout: default
 ---
 
-{% assign minutes = content | strip_html | number_of_words | divided_by: 180 %}
+<!-- {% assign minutes = content | strip_html | number_of_words | divided_by: 180 %}
 {% if minutes == 0 %}
 {% assign minutes = 1 %}
-{% endif %}
+{% endif %} -->
 
 <div class="post-header mb2">
   <h1>{{ page.title }}</h1>
@@ -26,15 +26,15 @@ layout: default
   {{ content }}
 </article>
 
-{% if site.show_sharing_icons %}
+<!-- {% if site.show_sharing_icons %}
   {% include share_buttons.html %}
 {% endif %}
 
 {% if site.show_post_footers %}
   {% include post_footer.html %}
-{% endif %}
+{% endif %} -->
 
-{% if site.disqus_shortname %}
+<!-- {% if site.disqus_shortname %}
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_shortname  = '{{ site.disqus_shortname }}';
@@ -64,4 +64,4 @@ layout: default
       </a>
     </div>
   {% endfor %}
-{% endif %}
+{% endif %} -->

@@ -6,11 +6,13 @@
 .posts .post {
   margin-bottom: 20px;
   border-bottom: thin solid #f3f3f3;
+  text-align: justify;
 }
 
 .posts .post:last-child {
   border-bottom: 20px;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 .post-link .post-title {

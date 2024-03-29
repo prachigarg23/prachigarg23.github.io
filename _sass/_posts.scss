@@ -9,18 +9,17 @@
 
 // this is for outer stuff
 .posts .post {
-  margin: 2em 0;
+  margin: 1em 0;
 }
 
 .posts .post-content {
-  margin: 2em 0;
+  margin: 1em 0;
   font-family: "Avenir Next" !important;
   // text-align-last: justify;
 }
 
 .posts .post:last-child {
   border-bottom: 20px;
-  margin: 2em 0;
   font-family: "Avenir Next" !important;
   // text-align: justify;
 }
@@ -33,7 +32,6 @@
 
 .post-footer {
   @extend .italic;
-
   margin: 2em 0;
   // text-align: left;
 }
@@ -47,7 +45,7 @@
 .post-meta {
   width: auto;
   font-weight: 300;
-  margin: 2em 0;
+  margin: 1em 0;
   color: #7a7a7a;
   font-style: italic;
   font-family: "Avenir Next" !important;

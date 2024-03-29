@@ -4,19 +4,19 @@
 }
 
 .posts .post {
-  margin-bottom: 20px;
+  margin: 2em 0;
   border-bottom: thin solid #f3f3f3;
   text-align: justify;
 }
 
 .posts .post:last-child {
   border-bottom: 20px;
-  margin-bottom: 20px;
+  margin: 2em 0;
   text-align: justify;
 }
 
 .post-link .post-title {
-  margin-top: 20px;
+  margin: 2em 0;
   font-weight: 600;
   color: #333;
 }
@@ -24,7 +24,7 @@
 .post-footer {
   @extend .italic;
 
-  margin-top: 20px;
+  margin: 2em 0;
   text-align: left;
 }
 

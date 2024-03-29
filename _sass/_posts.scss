@@ -9,7 +9,7 @@
 }
 
 .posts .post:last-child {
-  border-bottom: none;
+  border-bottom: 20px;
   margin-bottom: 20px;
   padding-bottom: 30px;
 }
@@ -24,13 +24,13 @@
   @extend .italic;
 
   margin-top: 20px;
-  text-align: justify;
+  text-align: left;
 }
 
 .post-footer .avatar {
   margin: 20px;
   width: 100px;
-  border-radius: 50%;
+  border-radius: 0%;
 }
 
 .meta,

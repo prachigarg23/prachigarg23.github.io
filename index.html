@@ -73,21 +73,31 @@ function readLess() {
       .pinned-box p + p { margin-top: 5px; }
       .pinned-box i { color: #888; margin-right: 6px; }
 
-      .news-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+      .news-ticker {
+        overflow: hidden;
+        white-space: nowrap;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        padding: 12px 0;
+        background: #fafafa;
       }
-      .news-list li {
-        padding: 10px 0 10px 16px;
-        border-left: 3px solid #eee;
-        margin-bottom: 4px;
-        transition: border-color 0.2s ease;
+      .news-ticker-track {
+        display: inline-block;
+        white-space: nowrap;
+        animation: news-scroll 32s linear infinite;
       }
-      .news-list li:hover {
-        border-left-color: #00369f;
+      .news-ticker:hover .news-ticker-track {
+        animation-play-state: paused;
       }
-      .news-list h5 { margin: 0; font-weight: 400; }
+      .news-ticker-track span {
+        display: inline-block;
+        padding: 0 40px;
+        font-size: 13px;
+      }
+      @keyframes news-scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
 </style>
 
 <!-- <a href="https://www.cs.cmu.edu/~ftorre/">Prof. Fernando De La Torre</a> -->
@@ -267,24 +277,18 @@ function readLess() {
 
 <div id="talks">
 <h2>News</h2>
-<ul class="news-list">
-    <li><h5>[Jan 2026] Reviewer for CVPR 26, ECCV 26, NeurIPS 26, CoRL 26, IROS Workshops 26.</h5></li>
-    <li><h5>[Oct 2025] I passed my PhD qualification exam.</h5></li>
-    <li><h5>[Sep 2025] I had a really exciting summer at Waymo Perception (Mountain View, CA), working on reasoning for Video-LLMs in long-tailed scenarios.</h5></li>
-    <li><h5>[May 2025] Reviewer for AAAI 2025, CVPR 2025, CoRL 2025. Honoured as an Outstanding Reviewer for CVPR 2025.</h5></li>
-    <li><h5>[Feb 2025] Gave an invited talk in Prof. Wenzhen Yuan's group.</h5></li>
-    <li><h5>[Oct 2024] Attending ECCV in Milan, Italy to give an Oral Presentation talk on POET.</h5></li>
-    <li><h5>[Sep 2024] I had a fun summer working on multi-view camera-LiDAR 3D perception with Prof. Srinivas Narsimhan.</h5></li>
-    <li><h5>[Aug 2024] I have started my CS Ph.D at UIUC, super excited to work with Prof. Derek Hoiem.</h5></li>
-    <li><h5>[Jul 2024] My favourite work till date, POET on continually personalizing prompts is accepted to ECCV 2024.</h5></li>
-    <li><h5>[May 2024] I successfully defended my Masters thesis. <a href="https://www.ri.cmu.edu/publications/continual-personalization-of-human-actions-to-new-categories-over-time/">Thesis</a></h5></li>
-    <li><h5>[Mar 2024] New blog on CMU AI Summer Scholars mentoring experience. Highly recommended.</h5></li>
-    <li><h5>[Jan 2024] CVPR 2024 Reviewer.</h5></li>
-    <li><h5>[Nov 2023] Gave a talk on 'Prompt Tuning for Practical Continual Learning' at the Multi-Modal Foundation Models course. <a href="https://docs.google.com/presentation/d/17j4nKldmV1EdU9884q-VGBMyN9kDXExH0txUPpM87RY/edit?usp=sharing">[Slides]</a></h5></li>
-    <li><h5>[Oct 2023] Presented our work 'Data-Free Class-Incremental Hand Gesture Recognition' at ICCV 2023 in Paris.</h5></li>
-    <li><h5>[Oct 2023] Our work on 'Continual Few-Shot Learning for Activity Recognition' using lightweight prompt tuning is under review!</h5></li>
-    <li><h5>[Jul 2023] Project Leader at CMU CS Pathways, AI Scholars Summer Program. My high school mentees built their first CV-ML project! <a href="https://drive.google.com/file/d/102xu-aLU5xo_cB-5L4DOE-T0AYQfuZyc/view?usp=sharing">[Slides]</a></h5></li>
-</ul>
+<div class="news-ticker">
+  <div class="news-ticker-track">
+    <span>[Jan 2026] Reviewer for CVPR 26, ECCV 26, NeurIPS 26, CoRL 26, IROS Workshops 26.</span>
+    <span>[Oct 2025] I passed my PhD qualification exam.</span>
+    <span>[Sep 2025] I had a really exciting summer at Waymo Perception (Mountain View, CA), working on reasoning for Video-LLMs in long-tailed scenarios.</span>
+    <span>[May 2025] Reviewer for AAAI 2025, CVPR 2025, CoRL 2025. Honoured as an Outstanding Reviewer for CVPR 2025.</span>
+    <span>[Jan 2026] Reviewer for CVPR 26, ECCV 26, NeurIPS 26, CoRL 26, IROS Workshops 26.</span>
+    <span>[Oct 2025] I passed my PhD qualification exam.</span>
+    <span>[Sep 2025] I had a really exciting summer at Waymo Perception (Mountain View, CA), working on reasoning for Video-LLMs in long-tailed scenarios.</span>
+    <span>[May 2025] Reviewer for AAAI 2025, CVPR 2025, CoRL 2025. Honoured as an Outstanding Reviewer for CVPR 2025.</span>
+  </div>
+</div>
 </div>
 
 <br/>

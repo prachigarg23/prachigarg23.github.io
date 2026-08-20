@@ -27,6 +27,67 @@ function readLess() {
         background-color: transparent;
         text-decoration: none;
       } */
+
+      .pub-card {
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+        padding: 20px;
+        margin-bottom: 22px;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+      }
+      .pub-card:hover {
+        box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+        transform: translateY(-3px);
+      }
+      .pub-card-img {
+        flex: 0 0 33%;
+        text-align: center;
+      }
+      .pub-card-img img {
+        max-width: 100%;
+        border-radius: 6px;
+      }
+      .pub-card-body {
+        flex: 1;
+        min-width: 0;
+      }
+      .pub-card-body h5 {
+        margin-top: 0;
+      }
+      @media (max-width: 700px) {
+        .pub-card { flex-direction: column; }
+        .pub-card-img { flex: none; width: 100%; }
+      }
+
+      .pinned-box {
+        background-color: #f5f5f5;
+        border-left: 4px solid #ccc;
+        padding: 10px 15px;
+        margin: 15px 0;
+      }
+      .pinned-box p { margin: 0; }
+      .pinned-box p + p { margin-top: 5px; }
+      .pinned-box i { color: #888; margin-right: 6px; }
+
+      .news-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .news-list li {
+        padding: 10px 0 10px 16px;
+        border-left: 3px solid #eee;
+        margin-bottom: 4px;
+        transition: border-color 0.2s ease;
+      }
+      .news-list li:hover {
+        border-left-color: #00369f;
+      }
+      .news-list h5 { margin: 0; font-weight: 400; }
 </style>
 
 <!-- <a href="https://www.cs.cmu.edu/~ftorre/">Prof. Fernando De La Torre</a> -->
@@ -35,13 +96,21 @@ function readLess() {
 
 <div class="bio" style="text-align:justify">
 
-<p> Hi! I'm a 2nd year Ph.D. Student in Computer Science at the University of Illinois Urbana Champaign, where I am advised by <a href="https://dhoiem.cs.illinois.edu/">Prof. Derek Hoiem</a>. I like to build general purpose and adaptable vision and robotics systems, particularly models that can continually acquire new skills and concepts over time.</p>
+<p> Hi! I'm a CS PhD student at the University of Illinois Urbana Champaign, where I work with <a href="https://dhoiem.cs.illinois.edu/">Prof. Derek Hoiem</a> and <a href="https://saurabhg.web.illinois.edu/">Prof. Saurabh Gupta</a>. I am currently interested in problems in continual learning and reinforcement learning with the goal of sample efficient adaptation of generative control policies for bimanual robots, particularly in self-supervision and self-learning.</p>
 
 <p>Previously, I finished my Masters of Science in Robotics from Carnegie Mellon University. For my thesis research, I worked on <i>continual personalization of human action recognition</i> advised by <a href="https://www.cs.cmu.edu/~ftorre/">Prof. Fernando De La Torre</a> and in collaboration with Meta Reality Labs, XR Input Team. I spent summer 2024 building the multi-view camera-LiDAR 3D perception pipeline for the US Department of Transportation, Safe Intersection Challenge with <a href="https://www.cs.cmu.edu/~srinivas/">Prof. Srinivasa Narsimhan</a>. I interned at Waymo LLC, Semantics Understanding Team in summer 2025.
 
-<p>In the past, I have had wonderful opportunities working with <a href="https://www.iith.ac.in/~vineethnb/">Prof. Vineeth N Balasubramanian</a> (CMU and IIIT-Hyderabad), <a href="https://faculty.iiit.ac.in/~jawahar/">Prof. C V Jawahar</a> (IIIT-Hyderabad), and <a href="https://scholar.google.com/citations?hl=en&user=Gb5a92sAAAAJ&view_op=list_works&sortby=pubdate">Prof. Frederic Jurie</a> (in beautiful Normandy, France).
+<p>In the past, I have had wonderful opportunities working with <a href="https://www.iith.ac.in/~vineethnb/">Prof. Vineeth N Balasubramanian</a> (at CMU and IIIT-Hyderabad), <a href="https://faculty.iiit.ac.in/~jawahar/">Prof. C V Jawahar</a> (IIIT-Hyderabad), and <a href="https://scholar.google.com/citations?hl=en&user=Gb5a92sAAAAJ&view_op=list_works&sortby=pubdate">Prof. Frederic Jurie</a> (in beautiful Normandy, France).
   <!-- I completed my Bachelors in Computer Science and Engineering in 2020 from Delhi College of Engineering, India. -->
 </p>
+
+<p>In a past life, I had started my undergrad at Delhi College of Engineering, India, working on <a href="https://prachigarg23.github.io/projects/">UAVs and drones</a> as an avionics researcher at <a href="https://uasdtu.com/">UAS-DTU</a>.</p>
+
+<div class="pinned-box">
+<p><i class="fa fa-thumb-tack" aria-hidden="true"></i> [Fall 2026] We're organizing the <a href="https://publish.illinois.edu/robotic-manipulation-seminar/">Robotic Manipulation Seminar</a> at UIUC.</p>
+<p><i class="fa fa-thumb-tack" aria-hidden="true"></i> Open to collaborating with 1 Master's student and 1 undergraduate student.</p>
+</div>
+
 <br>
 <p>
 <!-- Even before, I've had the pleasure of conducting research at:
@@ -117,164 +186,105 @@ function readLess() {
 <h2><a name="research">Recent Publications</a></h2>
 <br/>
 
-<table width="100%" align="center" valign="middle" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
-    <tbody>
-      <tr>
-      <td width="35%">
-        <div class="one" style="text-align:center;">
-            <img src="images/POET_ECCV_teaser.png" style="max-height: 350px;">
-        </div>
-      </td>
-      <td valign="top" width="65%">
-        <h5>
-          <font size="+1">POET: Prompt Offset Tuning for Continual Human Action Adaptation</font>
-        </h5>
-        <p class="authors">
-        <font size="-2"><b><u>Prachi Garg</u></b>, Joseph K J, Vineeth N Balasubramanian, Necati Cihan Camgoz, Chengde Wan, Kenrick Kin, Weiguang Si, Shugao Ma, Fernando De La Torre</font>
-        </p>
-        <span>
-        <font size="+1"><b>ECCV 2024,</b></font>
-        </span>
-        <span style="color:red"><b>Oral Presentation (2.32%)</b></span>
-        <p>
-        <a href="https://humansensinglab.github.io/POET-continual-action-recognition/">Project Page / </a>
-        <a href="http://www.humansensing.cs.cmu.edu/sites/default/files/final_ECCV_POET_complete.pdf">Paper / </a>
-        <a href="https://github.com/humansensinglab/POET-continual-action-recognition">Code / </a> 
-        <a href="https://www.youtube.com/watch?v=oOK0cglVKQk">Talk Video </a>
-        </p>
+<div class="pub-card">
+  <div class="pub-card-img">
+    <img src="images/self_supervised_control_teaser.gif">
+  </div>
+  <div class="pub-card-body">
+    <h5><font size="+1">Fine-Tuning VLAs with Self-Demonstrated Generative Control for Multi-Task Manipulation</font></h5>
+    <p class="authors">
+    <font size="-2"><b><u>Prachi Garg</u></b>, Steve Xing*, Prahit Yaugand*, Saurabh Gupta, Derek Hoiem</font>
+    </p>
+    <b>arXiv 2026</b>
+    <p>
+    <a href="https://self-supervised-control.pages.dev/">Project Page</a>
+    </p>
+  </div>
+</div>
 
-      </td>
-    </tr>
-    <tr>
-    <td width="35%">
-      <div class="one" style="text-align:center;">
-          <img src="images/ICCV2023_BOATMI.png" style="max-height: 150px;">
-      </div>
-    </td>
-    <td valign="top" width="60%">
-      <h5>
-        <font size="+1">Data-Free Class-Incremental Hand Gesture Recognition</font>
-      </h5>
-      <p class="authors">
-      <font size="-2">Shubhra Aich*, Jesus Ruiz*, Zhenyu Lu, <b><u>Prachi Garg</u></b>, K J Joseph, Alvaro Garcia, Vineeth N Balasubramanian, Kenrick Kin, Chengde Wan, Necati Cihan Camgoz, Shugao Ma, Fernando De La Torre</font>
-      </p>
-      <b>ICCV 2023</b>
-      <p>
-      <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Aich_Data-Free_Class-Incremental_Hand_Gesture_Recognition_ICCV_2023_paper.pdf">Paper / </a>
-      <a href="https://github.com/humansensinglab/dfcil-hgr">Code </a>
-      </p>
+<div class="pub-card">
+  <div class="pub-card-img">
+    <img src="images/POET_ECCV_teaser.png">
+  </div>
+  <div class="pub-card-body">
+    <h5><font size="+1">POET: Prompt Offset Tuning for Continual Human Action Adaptation</font></h5>
+    <p class="authors">
+    <font size="-2"><b><u>Prachi Garg</u></b>, Joseph K J, Vineeth N Balasubramanian, Necati Cihan Camgoz, Chengde Wan, Kenrick Kin, Weiguang Si, Shugao Ma, Fernando De La Torre</font>
+    </p>
+    <span>
+    <font size="+1"><b>ECCV 2024,</b></font>
+    </span>
+    <span style="color:red"><b>Oral Presentation (2.32%)</b></span>
+    <p>
+    <a href="https://humansensinglab.github.io/POET-continual-action-recognition/">Project Page / </a>
+    <a href="http://www.humansensing.cs.cmu.edu/sites/default/files/final_ECCV_POET_complete.pdf">Paper / </a>
+    <a href="https://github.com/humansensinglab/POET-continual-action-recognition">Code / </a>
+    <a href="https://www.youtube.com/watch?v=oOK0cglVKQk">Talk Video </a>
+    </p>
+  </div>
+</div>
 
-    </td>
-  </tr>
-      <tr>
-      <td width="35%">
-        <div class="one" style="text-align:center;">
-            <img src="images/maindiagram.png" style="max-height: 350px;">
-        </div>
-      </td>
-      <td valign="top" width="65%">
-        <h5>
-          <font size="+1">Multi-Domain Incremental Learning for Semantic Segmentation</font>
-        </h5>
-        <p class="authors">
-        <font size="-2"><b><u>Prachi Garg</u></b>, Rohit Saluja, Vineeth N Balasubramanian, Chetan Arora, Anbumani Subramanian, C V Jawahar</font>
-        </p>
-          <b>WACV 2022</b>
-        <p>
-        <a href="https://openaccess.thecvf.com/content/WACV2022/papers/Garg_Multi-Domain_Incremental_Learning_for_Semantic_Segmentation_WACV_2022_paper.pdf">Paper / </a>
-        <!-- <i><a href="https://arxiv.org/abs/2110.12205">arxiv / </a></i> -->
-        <a href="https://www.youtube.com/watch?v=YQC5KLZUpyc">Video / </a>
-        <a href="https://github.com/prachigarg23/MDIL-SS">Code / </a>
-        <a href="reports/294-wacv-poster.pdf">Poster / </a>
-        <a href="https://openaccess.thecvf.com/content/WACV2022/supplemental/Garg_Multi-Domain_Incremental_Learning_WACV_2022_supplemental.pdf">Supplementary</a>
-        </p>
+<div class="pub-card">
+  <div class="pub-card-img">
+    <img src="images/ICCV2023_BOATMI.png">
+  </div>
+  <div class="pub-card-body">
+    <h5><font size="+1">Data-Free Class-Incremental Hand Gesture Recognition</font></h5>
+    <p class="authors">
+    <font size="-2">Shubhra Aich*, Jesus Ruiz*, Zhenyu Lu, <b><u>Prachi Garg</u></b>, K J Joseph, Alvaro Garcia, Vineeth N Balasubramanian, Kenrick Kin, Chengde Wan, Necati Cihan Camgoz, Shugao Ma, Fernando De La Torre</font>
+    </p>
+    <b>ICCV 2023</b>
+    <p>
+    <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Aich_Data-Free_Class-Incremental_Hand_Gesture_Recognition_ICCV_2023_paper.pdf">Paper / </a>
+    <a href="https://github.com/humansensinglab/dfcil-hgr">Code </a>
+    </p>
+  </div>
+</div>
 
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="pub-card">
+  <div class="pub-card-img">
+    <img src="images/maindiagram.png">
+  </div>
+  <div class="pub-card-body">
+    <h5><font size="+1">Multi-Domain Incremental Learning for Semantic Segmentation</font></h5>
+    <p class="authors">
+    <font size="-2"><b><u>Prachi Garg</u></b>, Rohit Saluja, Vineeth N Balasubramanian, Chetan Arora, Anbumani Subramanian, C V Jawahar</font>
+    </p>
+    <b>WACV 2022</b>
+    <p>
+    <a href="https://openaccess.thecvf.com/content/WACV2022/papers/Garg_Multi-Domain_Incremental_Learning_for_Semantic_Segmentation_WACV_2022_paper.pdf">Paper / </a>
+    <!-- <i><a href="https://arxiv.org/abs/2110.12205">arxiv / </a></i> -->
+    <a href="https://www.youtube.com/watch?v=YQC5KLZUpyc">Video / </a>
+    <a href="https://github.com/prachigarg23/MDIL-SS">Code / </a>
+    <a href="reports/294-wacv-poster.pdf">Poster / </a>
+    <a href="https://openaccess.thecvf.com/content/WACV2022/supplemental/Garg_Multi-Domain_Incremental_Learning_WACV_2022_supplemental.pdf">Supplementary</a>
+    </p>
+  </div>
+</div>
 </div>
 
 <br/>
 
 <div id="talks">
 <h2>News</h2>
-<table width="100%" align="center" valign="middle" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
-    <tbody>
-    <td valign="middle" width="20%">
-     <tr>
-        <h5>
-        [Sep 2025] I had a really exciting summer at Waymo Perception (Mountain View, CA), working on reasoning for Video-LLMs in long-tailed scenarios.
-        </h5>
-    </tr>
-    <tr>
-        <h5>
-        [May 2025] Reviewer for AAAI 2025, CVPR 2025, CoRL 2025. Honoured as an Outstanding Reviewer for CVPR 2025.
-        </h5>
-    </tr>
-    <tr>
-        <h5>
-        [Feb 2025] Gave an invited talk in Prof. Wenzhen Yuan's group. 
-        </h5>
-    </tr>
-    <tr>
-        <h5>
-        [Oct 2024] Attending ECCV in Milan, Italy to give an Oral Presentation talk on POET.
-        </h5>
-    </tr>
-    <tr>
-        <h5>
-        [Sep 2024] I had a fun summer working on multi-view camera-LiDAR 3D perception with Prof. Srinivas Narsimhan.
-        </h5>
-    </tr>
-    <tr>
-      <h5>
-        [Aug 2024] I have started my CS Ph.D at UIUC, super excited to work with Prof. Derek Hoiem.
-      </h5>
-  </tr>
-  <tr>
-    <h5>
-       [Jul 2024]  My favourite work till date, POET on continually personalizing prompts is accepted to ECCV 2024.
-    </h5>
-    </tr>
-    <tr>
-        <h5>
-          [May 2024] I successfully defended my Masters thesis. <a href="https://www.ri.cmu.edu/publications/continual-personalization-of-human-actions-to-new-categories-over-time/">Thesis</a>
-        </h5>
-    </tr>
-    <tr>
-        <h5>
-        [Mar 2024] New blog on CMU AI Summer Scholars mentoring experience. Highly recommended.
-        </h5>
-    </tr>
-    <tr>
-        <h5>
-        [Jan 2024] CVPR 2024 Reviewer.
-        </h5>
-    </tr>
-    <tr>
-        <h5>
-        [Nov 2023] Gave a talk on 'Prompt Tuning for Practical Continual Learning’ at the Multi-Modal Foundation Models course. <a href="https://docs.google.com/presentation/d/17j4nKldmV1EdU9884q-VGBMyN9kDXExH0txUPpM87RY/edit?usp=sharing">[Slides]</a>
-        </h5>
-    </tr>
-    <tr>
-        <h5>
-        [Oct 2023] Presented our work 'Data-Free Class-Incremental Hand Gesture Recognition' at ICCV 2023 in Paris.
-        </h5>
-    </tr>
-    <tr>
-        <h5>
-        [Oct 2023] Our work on 'Continual Few-Shot Learning for Activity Recognition' using lightweight prompt tuning is under review!
-        </h5>
-    </tr>
-    <tr>
-        <h5>
-          [Jul 2023] Project Leader at CMU CS Pathways, AI Scholars Summer Program. My high school mentees built their first CV-ML project! <a href="https://drive.google.com/file/d/102xu-aLU5xo_cB-5L4DOE-T0AYQfuZyc/view?usp=sharing">[Slides]</a>
-        </h5>
-    </tr>
-    </td>
-  </tbody>
-</table>
+<ul class="news-list">
+    <li><h5>[Jan 2026] Reviewer for CVPR 26, ECCV 26, NeurIPS 26, CoRL 26, IROS Workshops 26.</h5></li>
+    <li><h5>[Oct 2025] I passed my PhD qualification exam.</h5></li>
+    <li><h5>[Sep 2025] I had a really exciting summer at Waymo Perception (Mountain View, CA), working on reasoning for Video-LLMs in long-tailed scenarios.</h5></li>
+    <li><h5>[May 2025] Reviewer for AAAI 2025, CVPR 2025, CoRL 2025. Honoured as an Outstanding Reviewer for CVPR 2025.</h5></li>
+    <li><h5>[Feb 2025] Gave an invited talk in Prof. Wenzhen Yuan's group.</h5></li>
+    <li><h5>[Oct 2024] Attending ECCV in Milan, Italy to give an Oral Presentation talk on POET.</h5></li>
+    <li><h5>[Sep 2024] I had a fun summer working on multi-view camera-LiDAR 3D perception with Prof. Srinivas Narsimhan.</h5></li>
+    <li><h5>[Aug 2024] I have started my CS Ph.D at UIUC, super excited to work with Prof. Derek Hoiem.</h5></li>
+    <li><h5>[Jul 2024] My favourite work till date, POET on continually personalizing prompts is accepted to ECCV 2024.</h5></li>
+    <li><h5>[May 2024] I successfully defended my Masters thesis. <a href="https://www.ri.cmu.edu/publications/continual-personalization-of-human-actions-to-new-categories-over-time/">Thesis</a></h5></li>
+    <li><h5>[Mar 2024] New blog on CMU AI Summer Scholars mentoring experience. Highly recommended.</h5></li>
+    <li><h5>[Jan 2024] CVPR 2024 Reviewer.</h5></li>
+    <li><h5>[Nov 2023] Gave a talk on 'Prompt Tuning for Practical Continual Learning' at the Multi-Modal Foundation Models course. <a href="https://docs.google.com/presentation/d/17j4nKldmV1EdU9884q-VGBMyN9kDXExH0txUPpM87RY/edit?usp=sharing">[Slides]</a></h5></li>
+    <li><h5>[Oct 2023] Presented our work 'Data-Free Class-Incremental Hand Gesture Recognition' at ICCV 2023 in Paris.</h5></li>
+    <li><h5>[Oct 2023] Our work on 'Continual Few-Shot Learning for Activity Recognition' using lightweight prompt tuning is under review!</h5></li>
+    <li><h5>[Jul 2023] Project Leader at CMU CS Pathways, AI Scholars Summer Program. My high school mentees built their first CV-ML project! <a href="https://drive.google.com/file/d/102xu-aLU5xo_cB-5L4DOE-T0AYQfuZyc/view?usp=sharing">[Slides]</a></h5></li>
+</ul>
 </div>
 
 <br/>
@@ -283,43 +293,30 @@ function readLess() {
 <h2><a name="research">Selected Research Projects</a></h2>
 <br/>
 
-<table width="100%" align="center" valign="middle" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
-    <tbody>
-    <tr>
-    <td width="35%">
-      <div class="one" style="text-align:center;">
-          <img src="images/diagram-ibm.png" style="max-height: 200px;">
-      </div>
-    </td>
-    <td valign="top" width="65%">
-      <h5>
-      Towards an AI Infused System for Objectionable Content Detection in OTT [IBM Research Laboratory]
-      </h5>
-      <p class="authors">
-      <font size="-4"> <b><u>Prachi Garg</u></b>, Shivang Chopra, Mudit Saxena, Anshu Yadav, Aditya Atri, Nishtha Madaan, Sameep Mehta</font>
+<div class="pub-card">
+  <div class="pub-card-img">
+    <img src="images/diagram-ibm.png">
+  </div>
+  <div class="pub-card-body">
+    <h5>Towards an AI Infused System for Objectionable Content Detection in OTT [IBM Research Laboratory]</h5>
+    <p class="authors">
+    <font size="-4"> <b><u>Prachi Garg</u></b>, Shivang Chopra, Mudit Saxena, Anshu Yadav, Aditya Atri, Nishtha Madaan, Sameep Mehta</font>
+    </p>
+    <p>
+      <a href="https://www.linkedin.com/pulse/towards-ai-infused-system-personalization-video-content-madaan/?articleId=6699399357223218177">Blog-post / </a>
+      <a href="https://drive.google.com/drive/folders/1vynuz54Zyd_gl4jC_CTQB7NACNs_heR0?usp=sharing">Demo </a>
+      <!-- <a href="https://kidify-ibm.herokuapp.com/survey.html">Survey</a> -->
+    </p>
+    <p>With the substantial increase in the consumption of OTT content in recent years, personalized objectionable content detection and filtering has become pertinent for making movie and TV series content suitable for family or children viewing. We propose an objectionable content detection framework which leverages multiple modalities like (i) videos, (ii) subtitle text and (iii) audio to detect (a) violence, (b) explicit NSFW content, and (c) offensive speech in videos. </p>
+  </div>
+</div>
 
-      </p>
-      <p>
-        <a href="https://www.linkedin.com/pulse/towards-ai-infused-system-personalization-video-content-madaan/?articleId=6699399357223218177">Blog-post / </a>
-        <a href="https://drive.google.com/drive/folders/1vynuz54Zyd_gl4jC_CTQB7NACNs_heR0?usp=sharing">Demo </a>
-        <!-- <a href="https://kidify-ibm.herokuapp.com/survey.html">Survey</a> -->
-      </p>
-      <p>With the substantial increase in the consumption of OTT content in recent years, personalized objectionable content detection and filtering has become pertinent for making movie and TV series content suitable for family or children viewing. We propose an objectionable content detection framework which leverages multiple modalities like (i) videos, (ii) subtitle text and (iii) audio to detect (a) violence, (b) explicit NSFW content, and (c) offensive speech in videos. </p>
-      <!-- <a href="https://www.linkedin.com/pulse/towards-ai-infused-system-personalization-video-content-madaan/?articleId=6699399357223218177" class="btn btn-outline-primary btn-sm" role="button" aria-pressed="true">Blog-post</a>
-      <a href="https://drive.google.com/drive/folders/1DVUCCE7OLlA7nFbgsf3VanIH_pZRprrq?usp=sharing" class="btn btn-outline-primary btn-sm" role="button" aria-pressed="true">Demo</a>
-      <a href="https://kidify-ibm.herokuapp.com/survey.html" class="btn btn-outline-primary btn-sm" role="button" aria-pressed="true">Survey</a> -->
-    </td>
-  </tr>
-  <tr>
-  <td width="35%">
-    <div class="one" style="text-align:center;">
-        <img src="images/greyc-proposed-model.png" style="max-height: 200px;">
-    </div>
-  </td>
-  <td valign="top" width="65%">
-    <h5>
-    Memorization and Generalization in CNNs using Soft Gating Mechanisms [Image Team GREYC, University of Caen Normandy]
-    </h5>
+<div class="pub-card">
+  <div class="pub-card-img">
+    <img src="images/greyc-proposed-model.png">
+  </div>
+  <div class="pub-card-body">
+    <h5>Memorization and Generalization in CNNs using Soft Gating Mechanisms [Image Team GREYC, University of Caen Normandy]</h5>
     <p class="authors">
     <font size="-4"><b><u>Prachi Garg</u></b>, Shivang Agarwal, Alexis Lechervy, Frederic Jurie</font>
     </p>
@@ -329,13 +326,8 @@ function readLess() {
     <a href="reports/report-failed-models-GREYC.pdf">Technical Report, Suboptimal ResNet Gating Mechanisms</a>
     </p>
     <p>A deep neural network learns patterns to hypothesize a large subset of samples that lie in-distribution and it memorises any out-of-distribution samples. While fitting to noise, the generalisation error increases and the DNN performs poorly on test set. In this work, we aim to examine if dedicating different layers to the generalizable and memorizable samples in a DNN could simplify the decision boundary learnt by the network and lead to improved generalization in DNNs. While the initial layers that are common to all examples tend to learn general patterns, we dedicate certain deeper additional layers in the network to memorise the out-of-distribution examples.</p>
-    <!-- <a href="reports/Report-GREYC.pdf" class="btn btn-outline-primary btn-sm" role="button" aria-pressed="true">Report</a>
-    <a href="https://github.com/prachigarg23/Memorisation-and-Generalisation-in-Deep-CNNs-Using-Soft-Gating-Mechanisms" class="btn btn-outline-primary btn-sm" role="button" aria-pressed="true">Code</a>
-    <a href="reports/report-failed-models-GREYC.pdf" class="btn btn-outline-primary btn-sm" role="button" aria-pressed="true">Suboptimal ResNet Gating Mechanisms</a> -->
-  </td>
-  </tr>
-  </tbody>
-</table>
+  </div>
+</div>
 </div>
 
 <!-- ML-GAT: Multi-label Node Classification using Enhanced Graph Attention Network

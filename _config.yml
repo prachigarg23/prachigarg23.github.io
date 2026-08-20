@@ -1,6 +1,6 @@
 # Site settings
 title:       Prachi Garg
-email:       prachigarg2398@gmail.com
+email:       prachig3@illinois.edu
 author:      Prachi Garg
 description: "Prachi Garg's personal academic website"
 baseurl:     ""
@@ -42,7 +42,7 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-google_scholar_username: # g5Aj5_IAAAAJ&hl
+google_scholar_username: g5Aj5_IAAAAJ
 github_username: prachigarg23
 bitbucket_username:
 stackoverflow_id:

@@ -43,14 +43,16 @@ tags: projects
   }
 
   .project-gallery {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-    height: 230px;
     margin-bottom: 16px;
   }
   .project-gallery img {
-    width: 100%;
-    height: 100%;
+    flex: 1 1 auto;
+    max-height: 220px;
+    width: auto;
+    max-width: 100%;
     object-fit: contain;
     background: #f2f2f2;
     border-radius: 8px;
@@ -60,24 +62,6 @@ tags: projects
   .project-gallery img:hover {
     transform: scale(1.03);
     box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-  }
-
-  .project-gallery.gallery-2 {
-    grid-template-columns: 1fr 1.4fr;
-  }
-
-  .project-gallery.gallery-3 {
-    grid-template-columns: 1.4fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-  .project-gallery.gallery-3 img:nth-child(1) {
-    grid-row: 1 / span 2;
-  }
-  .project-gallery.gallery-3 img:nth-child(2) {
-    grid-row: 1;
-  }
-  .project-gallery.gallery-3 img:nth-child(3) {
-    grid-row: 2;
   }
 
   .project-card-body h5 {
@@ -107,14 +91,8 @@ tags: projects
   }
 
   @media (max-width: 700px) {
-    .project-gallery {
-      height: auto;
-      grid-template-columns: 1fr !important;
-      grid-template-rows: none !important;
-    }
     .project-gallery img {
-      height: 170px;
-      grid-row: auto !important;
+      max-height: 170px;
     }
   }
 </style>
@@ -183,7 +161,7 @@ My first models on CIFAR: https://github.com/prachigarg23/CIFAR10 -->
 <p class="section-tagline"><i class="fa fa-plane" aria-hidden="true"></i>Unmanned Aerial Vehicles</p>
 
 <div class="project-card">
-  <div class="project-gallery gallery-2">
+  <div class="project-gallery">
     <img src="../images/technoxian_quad.png" alt="Technoxian quadcopter">
     <img src="../images/technoxian_group_pic.png" alt="Team at IRL Technoxian Quadcopter Challenge">
   </div>
@@ -197,7 +175,7 @@ My first models on CIFAR: https://github.com/prachigarg23/CIFAR10 -->
 </div>
 
 <div class="project-card">
-  <div class="project-gallery gallery-3">
+  <div class="project-gallery">
     <img src="../images/Lazarus.jpg" alt="UAS Lazarus in flight">
     <img src="../images/lazarus2.jpg" alt="UAS Lazarus fixed-wing aircraft">
     <img src="../images/Lazarus_off_axis.jpg" alt="UAS Lazarus off-axis gimbal target capture">

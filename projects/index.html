@@ -2,17 +2,121 @@
 layout: default
 tags: projects
 ---
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript">
-function readMore() {
-    $('#readMore').hide();
-    $('#more').show();
-}
-function readLess() {
-    $('#readMore').show();
-    $('#more').hide();
-}
-</script>
+
+<style>
+  html * {
+    font-size: 13px;
+  }
+
+  #robotics .section-tagline {
+    color: #777;
+    font-style: italic;
+    margin: -6px 0 22px 0;
+  }
+  #robotics .section-tagline i {
+    color: #00369f;
+    margin-right: 6px;
+  }
+
+  .role-tag {
+    display: inline-block;
+    background: rgba(0, 54, 159, 0.08);
+    color: #00369f;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+
+  .project-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    padding: 20px;
+    margin-bottom: 26px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .project-card:hover {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+  }
+
+  .project-gallery {
+    display: grid;
+    gap: 10px;
+    height: 230px;
+    margin-bottom: 16px;
+  }
+  .project-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .project-gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  }
+
+  .project-gallery.gallery-2 {
+    grid-template-columns: 1fr 1.4fr;
+  }
+
+  .project-gallery.gallery-3 {
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .project-gallery.gallery-3 img:nth-child(1) {
+    grid-row: 1 / span 2;
+  }
+  .project-gallery.gallery-3 img:nth-child(2) {
+    grid-row: 1;
+  }
+  .project-gallery.gallery-3 img:nth-child(3) {
+    grid-row: 2;
+  }
+
+  .project-card-body h5 {
+    margin: 0 0 2px 0;
+    font-size: 1.15em;
+  }
+  .project-card-body .project-meta {
+    display: block;
+    color: #777;
+    font-weight: 400;
+    font-size: 0.85em;
+    margin-bottom: 10px;
+  }
+
+  .project-links a {
+    color: #00369f;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 16px;
+    white-space: nowrap;
+  }
+  .project-links a:hover {
+    text-decoration: underline;
+  }
+  .project-links i {
+    margin-right: 5px;
+  }
+
+  @media (max-width: 700px) {
+    .project-gallery {
+      height: auto;
+      grid-template-columns: 1fr !important;
+      grid-template-rows: none !important;
+    }
+    .project-gallery img {
+      height: 170px;
+      grid-row: auto !important;
+    }
+  }
+</style>
 
 <!-- <div id="projects">
 <h2><a name="projects">Projects</a></h2>
@@ -75,71 +179,50 @@ My first models on CIFAR: https://github.com/prachigarg23/CIFAR10 -->
 
 <div id="robotics">
 <h2><a name="robotics">Robotics</a></h2>
-<p>Unmanned Aerial Vehicles</p>
-<br/>
+<p class="section-tagline"><i class="fa fa-plane" aria-hidden="true"></i>Unmanned Aerial Vehicles</p>
 
-<table width="100%" align="center" valign="middle" cellspacing="0" cellpadding="0" font size="-2" style="border-collapse: collapse;">
-    <tbody>
-  <tr>
-    <td colspan="2" valign="top" width="100%">
-      <h5>
-      IRL Technoxian Quadcopter Challenge, World Robotics Championship, by International Robotics Council (IRC), 2017
-      </h5>
-      <p>We built an indigeneous Light-Weight Sandwich Composite Multirotor System. As the Avionics Technician on the project, I was responsible for designing, integrating and testing the quadcopter's propulsion system and tuning the Naze flight controller. <a href="../reports/uas-propulsion-selection.pdf">Report</a></p>
-      <p>
-      </td>
-  </tr>
-  <tr>
-  <td width="40%">
-    <div class="one" style="text-align:center;">
-        <img src="../images/technoxian_quad.png" style="max-height: 250px;">
-    </div>
-  </td>
-  <td width="60%">
-    <div class="one" style="text-align:center;">
-        <img src="../images/technoxian_group_pic.png">
-    </div>
-  </td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top" width="50%">
-      <h5>
-      AUVSI Student Unmanned Air Systems Competition, Maryland, USA, 2017
-      </h5>
-      <p><i>UAS Lazarus</i></p>
-      <p>
-      <a href="https://drive.google.com/file/d/1xYUFj6_2kZm-WKjKPy4-t2PZ22HlW0eo/view?usp=sharing">Journal Paper (Team UAS-DTU)</a>
-      </p>
-      <p>
-      Developed a customized Ardupilot firmware algorithm to capture the off-axis target using 2-axis gimbal stabilization for Lazarus. Did extensive flight testing of this feature for the <a href="https://www.auvsi-suas.org/">AUVSI-SUAS</a> competition.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="55%">
-      <div class="one" style="text-align:center;">
-          <img src="../images/Lazarus.jpg" style="max-height: 200px;">
-      </div>
-    </td>
-    <td width="45%">
-      <div class="one" style="text-align:center;">
-          <img src="../images/lazarus2.jpg">
-      </div>
-    </td>
-  </tr>
-    <tr>
-      <td valign="top" width="100%">
-      <h5>
-      Robotics and Machine Intelligence Laboratory
-      </h5>
-      <p class="authors">
-      Mentor: Prof. Rajesh Rohilla
-      </p>
-      <p><b>Real-time object recognition system for autonomous navigation.</b> Used the YOLO architecture and ZED stereo camera on Nvidia’s Jetson TX1 module to develop a system that provides real-time information about the identity of objects and their distance from the car using audio. </p>
-      <p>Implementing YOLO in Pytorch from scratch: <a href="https://github.com/prachigarg23/YOLO-in-pytorch">Code</a></p>
-    </td>
-    </tr>
-      </tbody>
-</table>
+<div class="project-card">
+  <div class="project-gallery gallery-2">
+    <img src="../images/technoxian_quad.png" alt="Technoxian quadcopter">
+    <img src="../images/technoxian_group_pic.png" alt="Team at IRL Technoxian Quadcopter Challenge">
+  </div>
+  <div class="project-card-body">
+    <span class="role-tag">Avionics Technician</span>
+    <h5>IRL Technoxian Quadcopter Challenge</h5>
+    <span class="project-meta">World Robotics Championship, International Robotics Council (IRC), 2017</span>
+    <p>We built an indigenous Light-Weight Sandwich Composite Multirotor System. As the Avionics Technician on the project, I was responsible for designing, integrating and testing the quadcopter's propulsion system and tuning the Naze flight controller.</p>
+    <p class="project-links"><a href="../reports/uas-propulsion-selection.pdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>Report</a></p>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="project-gallery gallery-3">
+    <img src="../images/Lazarus.jpg" alt="UAS Lazarus in flight">
+    <img src="../images/lazarus2.jpg" alt="UAS Lazarus fixed-wing aircraft">
+    <img src="../images/Lazarus_off_axis.jpg" alt="UAS Lazarus off-axis gimbal target capture">
+  </div>
+  <div class="project-card-body">
+    <span class="role-tag">UAS Lazarus</span>
+    <h5>AUVSI Student Unmanned Air Systems Competition</h5>
+    <span class="project-meta">Maryland, USA, 2017</span>
+    <p>Developed a customized Ardupilot firmware algorithm to capture the off-axis target using 2-axis gimbal stabilization for Lazarus. Did extensive flight testing of this feature for the <a href="https://www.auvsi-suas.org/">AUVSI-SUAS</a> competition.</p>
+    <p class="project-links">
+      <a href="https://drive.google.com/file/d/1xYUFj6_2kZm-WKjKPy4-t2PZ22HlW0eo/view?usp=sharing"><i class="fa fa-book" aria-hidden="true"></i>Journal Paper (Team UAS-DTU)</a>
+      <a href="https://www.auvsi-suas.org/"><i class="fa fa-trophy" aria-hidden="true"></i>AUVSI-SUAS</a>
+    </p>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="project-card-body">
+    <span class="role-tag">Mentor: Prof. Rajesh Rohilla</span>
+    <h5>Robotics and Machine Intelligence Laboratory</h5>
+    <p><b>Real-time object recognition system for autonomous navigation.</b> Used the YOLO architecture and ZED stereo camera on Nvidia's Jetson TX1 module to develop a system that provides real-time information about the identity of objects and their distance from the car using audio.</p>
+    <p class="project-links"><a href="https://github.com/prachigarg23/YOLO-in-pytorch"><i class="fa fa-github" aria-hidden="true"></i>Implementing YOLO in Pytorch from scratch: Code</a></p>
+  </div>
+</div>
+
+</div>
 
 <br/>
 

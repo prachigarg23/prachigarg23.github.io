@@ -1,163 +1,187 @@
 ---
 layout: default
 tags: projects
+title: Old Projects
 ---
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&display=swap');
+
   html * {
     font-size: 13px;
   }
 
+  :root {
+    --p-fg: #1a1d22;
+    --p-muted: #6b7280;
+    --p-accent: #00369f;
+    --p-accent-dark: #002670;
+    --p-bg-soft: #f6f7f9;
+    --p-bg-soft2: #eef1f4;
+    --p-border: #e6e8ec;
+    --p-shadow: 0 1px 3px rgba(16,24,40,.06), 0 10px 28px rgba(16,24,40,.06);
+  }
+
+  /* ---------- Hero ---------- */
+  .proj-hero {
+    text-align: center;
+    padding: 18px 0 8px;
+    margin-bottom: 6px;
+  }
+  .proj-kicker {
+    font-size: 0.85em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--p-muted);
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+  .proj-title {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 2.6em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+    line-height: 1.05;
+    background: linear-gradient(180deg, #1a1d22, var(--p-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  hr.proj-divider {
+    border: none;
+    border-top: 1px solid var(--p-border);
+    margin: 26px 0 30px;
+  }
+
+  /* ---------- Site chrome override ---------- */
+  .site-header .site-title {
+    display: none;
+  }
+
+  /* ---------- Section tagline ---------- */
   #robotics .section-tagline {
-    color: #777;
+    color: var(--p-muted);
     font-style: italic;
-    margin: -6px 0 22px 0;
+    margin: 12px 0 24px 0;
   }
   #robotics .section-tagline i {
-    color: #00369f;
+    color: var(--p-accent);
     margin-right: 6px;
   }
 
-  .role-tag {
-    display: inline-block;
-    background: rgba(0, 54, 159, 0.08);
-    color: #00369f;
-    font-weight: 600;
-    padding: 3px 12px;
-    border-radius: 999px;
-    font-size: 0.9em;
-    margin-bottom: 10px;
-  }
-
+  /* ---------- Cards ---------- */
   .project-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-    padding: 20px;
-    margin-bottom: 26px;
+    background: var(--p-bg-soft);
+    border: 1px solid var(--p-border);
+    border-radius: 14px;
+    box-shadow: var(--p-shadow);
+    padding: 22px 24px 24px;
+    margin-bottom: 24px;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
   .project-card:hover {
-    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 14px 30px rgba(16,24,40,0.12);
     transform: translateY(-3px);
   }
 
   .project-gallery {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 10px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
   .project-gallery img {
-    flex: 1 1 auto;
-    max-height: 220px;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
-    background: #f2f2f2;
-    border-radius: 8px;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    background: #fff;
+    border: 1px solid var(--p-border);
+    border-radius: 10px;
     display: block;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .project-gallery img:hover {
     transform: scale(1.03);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+  }
+
+  .role-tag {
+    display: inline-block;
+    background: rgba(0, 54, 159, 0.08);
+    color: var(--p-accent);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 4px 13px;
+    border-radius: 999px;
+    font-size: 0.82em;
+    margin-bottom: 12px;
   }
 
   .project-card-body h5 {
-    margin: 0 0 2px 0;
-    font-size: 1.15em;
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 600;
+    margin: 0 0 3px 0;
+    font-size: 1.35em;
   }
   .project-card-body .project-meta {
     display: block;
-    color: #777;
-    font-weight: 400;
-    font-size: 0.85em;
-    margin-bottom: 10px;
+    color: var(--p-muted);
+    font-weight: 500;
+    font-size: 0.88em;
+    margin-bottom: 12px;
+  }
+  .project-card-body p {
+    line-height: 1.6;
   }
 
+  .project-links {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
   .project-links a {
-    color: #00369f;
+    display: inline-flex;
+    align-items: center;
+    background: #1b1f27;
+    color: #fff !important;
     text-decoration: none;
     font-weight: 600;
-    margin-right: 16px;
+    font-size: 0.92em;
+    padding: 7px 14px;
+    border-radius: 999px;
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
     white-space: nowrap;
   }
   .project-links a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: var(--p-shadow);
+    background: var(--p-accent-dark);
   }
   .project-links i {
-    margin-right: 5px;
+    margin-right: 7px;
   }
 
   @media (max-width: 700px) {
     .project-gallery img {
       max-height: 170px;
     }
+    .proj-title {
+      font-size: 2em;
+    }
   }
 </style>
 
-<!-- <div id="projects">
-<h2><a name="projects">Projects</a></h2>
-<br/>
-
-<table width="100%" align="center" valign="middle" cellspacing="0" font size="-2" cellpadding="0" style="border-collapse: collapse;">
-    <tbody>
-  <tr>
-    <td valign="top" width="100%">
-    <h5>
-    Robotics and Machine Intelligence Laboratory
-    </h5>
-    <p class="authors">
-    Mentor: Prof. Rajesh Rohilla
-    </p>
-    <p><b>Real-time object recognition system for autonomous navigation.</b> Used the YOLO architecture and ZED stereo camera on Nvidia’s Jetson TX1 module to develop a system that provides real-time information about the identity of objects and their distance from the car using audio. </p>
-    <p>Implementing YOLO in Pytorch from scratch: <a href="https://github.com/prachigarg23/YOLO-in-pytorch">Code</a></p>
-  </td>
-  </tr> -->
-  <!-- <tr>
-    <td valign="top" width="100%">
-    <h5>
-    Road Traffic Counting (Digital Image Processing Course Project)
-    </h5>
-    <p class="authors">
-    <b>Prachi Garg</b>, Ashi Gupta, Prof. Dinesh Chutani
-    </p>
-    <p>In this project, we implement a motion detection and tracking algorithm to monitor road traffic passing through the road as captured by a video camera. We use OpenCV and Python to implement motion detection and tracking using background selection algorithms. <a href="https://github.com/prachigarg23/Road-Traffic-counting-using-python-and-opencv">Project Page</a> </p>
-  </td>
-  </tr>
-  <tr>
-    <td valign="top" width="50%">
-      <h5>Machine Learning projects:</h5>
-      <ul>
-        <li>
-          <p>Naive-Bayes for newsgroup classification in the 20 Newsgroups dataset. I used to compare the Scikit Learn implementations with the original algorithms. <a href="https://github.com/prachigarg23/20_NEWSGROUPS">Code</a></p>
-        </li>
-        <li>
-          <p>I love understanding the mathematics behind machine learning models and algorithms. I used to compare popular algorithms on the Scikit-Learn datasets and infer what kind of algorithms work best for which type of datasets and why. For example, there are implementations of Voronoi and PAM K-medoids algorithms, along with the Sklearn inbuilt ones. Code for this ML repository from when I first started learning: <a href="https://github.com/prachigarg23/Machine-Learning-Scikit-Learn">Code</a></p>
-        </li>
-        <li>
-          <p>For my first basic project to understand CNNs and hyperparameter tuning, I collected a dataset of dogs from my colony. Then I implemented various CNNs to train a <i>Dog classifier</i>. I also used YOLO to train a <i>Dog detector</i> on my dataset. <a href="https://github.com/prachigarg23/dog-classifier">Classifier Code /</a> <a href="https://github.com/prachigarg23/dog-detector">Detector Beginner Tutorial</a>
-          </p>
-        </li>
-      </ul>
-My first models on CIFAR: https://github.com/prachigarg23/CIFAR10 -->
-    <!-- </td>
-  </tr> -->
-  <!-- <tr>
-    <td valign="top" width="50%">
-    <h5>Algorithm to find all the possible spanning trees of a given graph in increasing order of cost. </h5>
-    <p>Solved using Prim's method: <a href="https://github.com/prachigarg23/All-possible-Spanning-trees">Code</a></p>
-  </td>
-  </tr>
-</tbody>
-</table>
+<div class="proj-hero">
+  <p class="proj-kicker">Prachi Garg</p>
+  <h1 class="proj-title">Old Projects</h1>
 </div>
 
-<br/> -->
+<hr class="proj-divider">
 
 <div id="robotics">
-<h2><a name="robotics">Robotics</a></h2>
 <p class="section-tagline"><i class="fa fa-plane" aria-hidden="true"></i>Unmanned Aerial Vehicles</p>
 
 <div class="project-card">
@@ -197,12 +221,9 @@ My first models on CIFAR: https://github.com/prachigarg23/CIFAR10 -->
     <span class="role-tag">Mentor: Prof. Rajesh Rohilla</span>
     <h5>Robotics and Machine Intelligence Laboratory</h5>
     <p><b>Real-time object recognition system for autonomous navigation.</b> Used the YOLO architecture and ZED stereo camera on Nvidia's Jetson TX1 module to develop a system that provides real-time information about the identity of objects and their distance from the car using audio.</p>
-    <p class="project-links"><a href="https://github.com/prachigarg23/YOLO-in-pytorch"><i class="fa fa-github" aria-hidden="true"></i>Code</a></p>
   </div>
 </div>
 
 </div>
 
 <br/>
-
-<hr>

@@ -137,24 +137,17 @@ title: Old Projects
   .project-links a {
     display: inline-flex;
     align-items: center;
-    background: #2a2f3a;
-    color: #f0f0f0 !important;
+    background: #fff;
+    color: var(--p-accent) !important;
+    border: 1px solid var(--p-border);
     text-decoration: none;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    font-weight: 300;
     font-size: 15px;
-    padding: 7px 14px;
-    border-radius: 999px;
-    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+    padding: 6px 14px;
+    border-radius: 6px;
     white-space: nowrap;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
   .project-links a:hover {
-    text-decoration: none;
-    transform: translateY(-1px);
-    box-shadow: var(--p-shadow);
-    background: var(--p-accent-dark);
+    text-decoration: underline;
   }
   .project-links i {
     margin-right: 7px;
@@ -181,8 +174,8 @@ title: Old Projects
 
 <div class="project-card">
   <div class="project-gallery">
-    <img src="../images/technoxian_quad.png" alt="Technoxian quadcopter">
-    <img src="../images/technoxian_group_pic.png" alt="Team at IRL Technoxian Quadcopter Challenge">
+    <img src="../images/technoxian_quad.jpg" alt="Technoxian quadcopter" loading="lazy" decoding="async">
+    <img src="../images/technoxian_group_pic.jpg" alt="Team at IRL Technoxian Quadcopter Challenge" loading="lazy" decoding="async">
   </div>
   <div class="project-card-body">
     <span class="role-tag">Avionics Technician</span>
@@ -195,9 +188,9 @@ title: Old Projects
 
 <div class="project-card">
   <div class="project-gallery">
-    <img src="../images/Lazarus.jpg" alt="UAS Lazarus in flight">
-    <img src="../images/lazarus2.jpg" alt="UAS Lazarus fixed-wing aircraft">
-    <img src="../images/Lazarus_off_axis.jpg" alt="UAS Lazarus off-axis gimbal target capture">
+    <img src="../images/Lazarus.jpg" alt="UAS Lazarus in flight" loading="lazy" decoding="async">
+    <img src="../images/lazarus2.jpg" alt="UAS Lazarus fixed-wing aircraft" loading="lazy" decoding="async">
+    <img src="../images/Lazarus_off_axis.jpg" alt="UAS Lazarus off-axis gimbal target capture" loading="lazy" decoding="async">
   </div>
   <div class="project-card-body">
     <span class="role-tag">UAS Lazarus</span>
